@@ -1,6 +1,6 @@
 import argparse
 from config.reportlist import reportList
-
+import os
 
 def start_script():
     parser = argparse.ArgumentParser(description="Аргументы командной строки")
@@ -17,6 +17,10 @@ def start_script():
 
     if reportList.get(args.report) is None:
         raise Exception("Ошибка! Не найден отчет")
+
+    for file in args.files:
+        if not os.path.exists(file):
+            raise Exception(f"Ошибка! Файл {file} не найден")
 
     report = reportList.get(args.report)(args.files)
     report.start()

@@ -27,6 +27,7 @@ class MedianCoffee:
     def median(self):
         for user_name, spent in self.user_spent.items():
             self.report_data.append([user_name, int(median(spent))])
+            self.report_data.sort(key=lambda x: x[1], reverse=True)
 
     def send_report(self):
         print(tabulate(self.report_data, headers=self.headers, tablefmt="grid"))

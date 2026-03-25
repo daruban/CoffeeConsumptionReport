@@ -1,6 +1,6 @@
-from Reports.median_coffee import MedianCoffee
+from Reports import *
 
 
 reportList = {
-    "median-coffee": MedianCoffee
+    "median-coffee": median_coffee.MedianCoffee
 }
