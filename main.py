@@ -2,6 +2,7 @@ import argparse
 from config.reportlist import reportList
 import os
 
+
 def start_script():
     parser = argparse.ArgumentParser(description="Аргументы командной строки")
     parser.add_argument("--files", nargs="+", default=None, help="Название файлов")
